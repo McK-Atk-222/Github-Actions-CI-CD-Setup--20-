@@ -1,0 +1,27 @@
+name: Deploy
+
+on:
+    push:
+      branches: [main]
+    pull_request:
+      branches:
+        - main
+       
+jobs:
+    ci:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+
+        - name: Test
+          run: |
+            npm install
+            npm run test
+
+        - name: Deploy
+          if: github.ref == 'refs/heads/main'
+          env:
+            DEPLOY_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }} #must add secret in github repository(secrets and variables in sidebar), 
+                                                              #obtained hook from render settings (also change out deploy to off once setup)
+          run: |
+            curl "$DEPLOY_URL"
