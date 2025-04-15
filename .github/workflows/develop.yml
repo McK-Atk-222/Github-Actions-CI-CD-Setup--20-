@@ -1,5 +1,5 @@
 # Name of workflow
-name: Test workflow
+name: Develop 
 
 # Trigger workflow on all pull requests
 on:
