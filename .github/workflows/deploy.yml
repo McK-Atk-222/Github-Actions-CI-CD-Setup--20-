@@ -24,9 +24,6 @@ jobs:
 
         - name: Deploy
           env:
-            DEPLOY_URL: ${{secrets.RENDER_DEPLOY_HOOK_URL}} #must add secret in github repository(secrets and variables in sidebar), 
-                                                              #obtained hook from render settings (also change out deploy to off once setup)
-          run: curl "$DEPLOY_URL"
-          
-
-            
+            DEPLOY_URL: ${{secrets.RENDER_DEPLOY_HOOK_URL}}
+          run: |
+            curl "$DEPLOY_URL"
