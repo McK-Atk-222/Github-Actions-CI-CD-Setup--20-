@@ -19,12 +19,8 @@ jobs:
           with:
             node-version: 21.x
 
-        - name: Install deps
-          run: npm install
-
         - name: Deploy
           env:
             DEPLOY_URL: ${{secrets.RENDER_DEPLOY_HOOK_URL}}
           run: |
             curl "$DEPLOY_URL"
-            
