@@ -7,9 +7,8 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-dotenv
 .env
-
+dot env
 node_modules
 dist
 dist-ssr
