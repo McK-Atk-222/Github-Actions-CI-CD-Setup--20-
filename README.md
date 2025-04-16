@@ -15,7 +15,8 @@ Project to create a CI/CD pipeline using GitHub Actions to run the component tes
 npm i
 
 ## Usage
-npm run build, npm start DEPLOYED URL: https://github-actions-ci-cd-setup-20.onrender.com
+npm run build, npm start 
+DEPLOYED URL: https://github-actions-ci-cd-setup-20.onrender.com
 
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
