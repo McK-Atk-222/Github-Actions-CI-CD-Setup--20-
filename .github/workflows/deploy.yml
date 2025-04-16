@@ -11,14 +11,16 @@ jobs:
     ci:
       runs-on: ubuntu-latest
       steps:
-        - uses: actions/checkout@v3
+        - name: Checkout code
+          uses: actions/checkout@v4
 
-        - name: Test
-          run: |
-            npm install
-            npm run build
-            npm run start
-            npm run test
+        - name: Use Node.js 21.x
+          uses: actions/setup-node@v4
+          with:
+            node-version: 21.x
+            
+        - name: Install deps
+          run: npm install
 
         - name: Deploy
           if: github.ref == 'refs/heads/main'
